@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	button {
+		display: flex;
+		background: none;
+		border: 2px solid #000;
+	}
+}

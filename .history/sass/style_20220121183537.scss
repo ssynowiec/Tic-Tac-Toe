@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	button {
+		display: flex;
+		width: 33%;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: 2px solid transparent;
+		cursor: pointer;
+
+		&:nth-child(1) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(2) {
+			// border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(3) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(4) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(5) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(6) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(7) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(8) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+		&:nth-child(9) {
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+		}
+	}
+}

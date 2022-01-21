@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+}
+
+.board .square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.33%;
+  height: 33.33%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.board .square.top {
+  border-bottom: 5px solid #000;
+}
+
+.board .square.bottom {
+  border-top: 5px solid #000;
+}
+
+.board .square.left {
+  border-right: 5px solid #000;
+}
+
+.board .square.right {
+  border-left: 5px solid #000;
+}
+
+.board .square .o {
+  width: 80%;
+  height: 80%;
+  border: 15px solid #000;
+  border-radius: 50%;
+}
+
+.board .square .x {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.board .square .x::before, .board .square .x::after {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 100%;
+  background-color: #000;
+}
+
+.board .square .x::before {
+  left: 50%;
+}
+
+.board .square .x::after {
+  right: 50%;
+}
+/*# sourceMappingURL=style.css.map */

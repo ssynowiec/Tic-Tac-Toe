@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.board {
+	display: flex;
+	flex-direction: row;
+	// justify-content: center;
+	// align-items: center;
+	flex-wrap: wrap;
+	width: 600px;
+	height: 600px;
+
+	.square {
+		display: flex;
+		width: 33%;
+		height: 33%;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: 2px solid transparent;
+		cursor: pointer;
+	}
+}
