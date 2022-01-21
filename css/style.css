@@ -7,6 +7,27 @@
   padding: 0;
 }
 
+.header {
+  text-align: center;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 90vh;
+}
+
+.footer {
+  text-align: center;
+}
+
 .board {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,31 +66,31 @@
 }
 
 .board .square.top {
-  border-bottom: 5px solid #000;
+  border-bottom: 10px solid #000000;
 }
 
 .board .square.bottom {
-  border-top: 5px solid #000;
+  border-top: 10px solid #000000;
 }
 
 .board .square.left {
-  border-right: 5px solid #000;
+  border-right: 10px solid #000000;
 }
 
 .board .square.right {
-  border-left: 5px solid #000;
+  border-left: 10px solid #000000;
 }
 
 .board .square .o {
   width: 80%;
   height: 80%;
-  border: 15px solid #000;
+  border: 20px solid #000000;
   border-radius: 50%;
 }
 
 .board .square .x {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   position: relative;
 }
 
@@ -77,16 +98,21 @@
   display: block;
   position: absolute;
   content: '';
-  width: 10px;
+  width: 20px;
   height: 100%;
-  background-color: #000;
+  background-color: #000000;
+  border-radius: 5px;
 }
 
 .board .square .x::before {
   left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
 }
 
 .board .square .x::after {
   right: 50%;
+  -webkit-transform: translateX(50%) rotate(-45deg);
+          transform: translateX(50%) rotate(-45deg);
 }
 /*# sourceMappingURL=style.css.map */
