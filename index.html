@@ -7,13 +7,28 @@
 		<meta name="description" content="Game Tic Toe" />
 		<meta name="keywords" content="game, tic toe, multiplayer, x, y" />
 		<meta name="author" content="ssynowiec.pl" />
+		<meta name="color-scheme" content="dark light" />
 		<title>Tic Tac Toe</title>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="./img/icons/xo.ico"
+			type="image/x-icon"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
-	<body>
+	<body data-mode="light">
 		<header class="header">
 			<h1>Tic Tac Toe</h1>
+			<button class="theme-toggle">
+				<img src="./img/icons/sun.png" alt="" class="sun" />
+				<img src="./img/icons/moon.png" alt="" class="moon" />
+			</button>
 		</header>
 		<main class="main">
 			<h2 class="player"></h2>
@@ -51,7 +66,9 @@
 		<footer class="footer">
 			<p>
 				&copy; 2022
-				<a href="https://github.com/ssynowiec">ssynowiec.pl</a>
+				<a href="https://github.com/ssynowiec"
+					>github.com/ssynowiec.pl</a
+				>
 			</p>
 		</footer>
 		<script src="./js/script.js"></script>

@@ -2,6 +2,7 @@ const squares = document.querySelectorAll('.square');
 const restartBtn = document.querySelector('.restart');
 const player = document.querySelector('.player');
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
+const themeToggle = document.querySelector('.theme-toggle');
 const winningConditions = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -79,5 +80,34 @@ squares.forEach(square => {
 	});
 });
 
+const changeTheme = () => {
+	const currentTheme = localStorage.getItem('theme');
+	if (currentTheme === 'dark') {
+		localStorage.setItem('theme', 'light');
+		document.body.setAttribute('data-mode', 'light');
+	} else {
+		localStorage.setItem('theme', 'dark');
+		document.body.setAttribute('data-mode', 'dark');
+	}
+};
+
+const contentLoad = () => {
+	showCurrentPlayer();
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDarkScheme.matches && localStorage.getItem('theme') === null) {
+		localStorage.setItem('theme', 'dark');
+		document.body.setAttribute('data-mode', 'dark');
+	} else if (
+		!prefersDarkScheme.matches &&
+		localStorage.getItem('theme') === null
+	) {
+		localStorage.setItem('theme', 'light');
+		document.body.setAttribute('data-mode', 'light');
+	} else {
+		document.body.setAttribute('data-mode', localStorage.getItem('theme'));
+	}
+};
+
 restartBtn.addEventListener('click', restartGame);
-document.addEventListener('DOMContentLoaded', showCurrentPlayer);
+document.addEventListener('DOMContentLoaded', contentLoad);
+themeToggle.addEventListener('click', changeTheme);
