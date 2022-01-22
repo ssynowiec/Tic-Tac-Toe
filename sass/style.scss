@@ -14,6 +14,7 @@
 
 .main {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	height: 90vh;
@@ -41,6 +42,15 @@
 		background: none;
 		border: none;
 		cursor: pointer;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background-color: $hover;
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+		}
 
 		&.top {
 			border-bottom: 10px solid $primaryBlack;
@@ -56,6 +66,14 @@
 
 		&.right {
 			border-left: 10px solid $primaryBlack;
+		}
+
+		&.winner {
+			animation: winnerBackground infinite 2s;
+		}
+
+		&.blocked {
+			animation: blockedBoard infinite 2s;
 		}
 
 		.o {
@@ -91,5 +109,29 @@
 				transform: translateX(50%) rotate(-45deg);
 			}
 		}
+	}
+}
+
+@keyframes winnerBackground {
+	0% {
+		background-color: white;
+	}
+	50% {
+		background-color: yellowgreen;
+	}
+	100% {
+		background-color: white;
+	}
+}
+
+@keyframes blockedBoard {
+	0% {
+		background-color: white;
+	}
+	50% {
+		background-color: #be3636;
+	}
+	100% {
+		background-color: white;
 	}
 }

@@ -15,6 +15,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -63,6 +67,16 @@
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.board .square:hover {
+  background-color: #858585c0;
+}
+
+.board .square:disabled {
+  cursor: not-allowed;
 }
 
 .board .square.top {
@@ -79,6 +93,16 @@
 
 .board .square.right {
   border-left: 10px solid #000000;
+}
+
+.board .square.winner {
+  -webkit-animation: winnerBackground infinite 2s;
+          animation: winnerBackground infinite 2s;
+}
+
+.board .square.blocked {
+  -webkit-animation: blockedBoard infinite 2s;
+          animation: blockedBoard infinite 2s;
 }
 
 .board .square .o {
@@ -114,5 +138,53 @@
   right: 50%;
   -webkit-transform: translateX(50%) rotate(-45deg);
           transform: translateX(50%) rotate(-45deg);
+}
+
+@-webkit-keyframes winnerBackground {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes winnerBackground {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@-webkit-keyframes blockedBoard {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #be3636;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes blockedBoard {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #be3636;
+  }
+  100% {
+    background-color: white;
+  }
 }
 /*# sourceMappingURL=style.css.map */
