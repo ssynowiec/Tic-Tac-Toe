@@ -14,6 +14,7 @@ const winningConditions = [
 	[2, 4, 6],
 ];
 let currentPlayer = 'o';
+let isWinner = false;
 
 const restartGame = () => {
 	squares.forEach(square => {
@@ -28,6 +29,7 @@ const restartGame = () => {
 	winnerAreas.forEach(area => {
 		area.classList.remove('winner');
 	});
+	isWinner = false;
 };
 
 const showCurrentPlayer = () => {
@@ -52,6 +54,7 @@ const checkIsWinner = () => {
 			bArea.classList.add('winner');
 			const cArea = document.querySelector(`[data-area="${c}"]`);
 			cArea.classList.add('winner');
+			isWinner = true;
 		}
 	});
 };
@@ -64,21 +67,9 @@ const checkIsNext = () => {
 		squares.forEach(square => {
 			square.classList.add('blocked');
 		});
+		player.textContent = `No further movements possible`;
 	}
 };
-
-squares.forEach(square => {
-	square.addEventListener('click', () => {
-		square.querySelector('div').classList.add(currentPlayer);
-		square.setAttribute('disabled', true);
-		const area = parseInt(square.getAttribute('data-area'));
-		gameBoard[area] = currentPlayer;
-		checkIsWinner();
-		currentPlayer = currentPlayer === 'o' ? 'x' : 'o';
-		showCurrentPlayer();
-		checkIsNext();
-	});
-});
 
 const changeTheme = () => {
 	const currentTheme = localStorage.getItem('theme');
@@ -107,6 +98,21 @@ const contentLoad = () => {
 		document.body.setAttribute('data-mode', localStorage.getItem('theme'));
 	}
 };
+
+squares.forEach(square => {
+	square.addEventListener('click', () => {
+		square.querySelector('div').classList.add(currentPlayer);
+		square.setAttribute('disabled', true);
+		const area = parseInt(square.getAttribute('data-area'));
+		gameBoard[area] = currentPlayer;
+		checkIsWinner();
+		if (!isWinner) {
+			currentPlayer = currentPlayer === 'o' ? 'x' : 'o';
+			showCurrentPlayer();
+			checkIsNext();
+		}
+	});
+});
 
 restartBtn.addEventListener('click', restartGame);
 document.addEventListener('DOMContentLoaded', contentLoad);
