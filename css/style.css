@@ -41,20 +41,21 @@ body {
 
 .header {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 
 .header .theme-toggle {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: none;
   border: none;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 
 .header .theme-toggle img {
@@ -79,6 +80,11 @@ body {
   height: 80vh;
 }
 
+.main .info {
+  text-align: center;
+  padding: 15px 30px;
+}
+
 .main .restart {
   padding: 15px 30px;
   margin-top: 25px;
@@ -92,6 +98,10 @@ body {
 
 .footer {
   text-align: center;
+}
+
+.footer .copy {
+  padding: 15px 15px;
 }
 
 .board {

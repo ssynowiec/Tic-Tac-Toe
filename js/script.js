@@ -1,6 +1,6 @@
 const squares = document.querySelectorAll('.square');
 const restartBtn = document.querySelector('.restart');
-const player = document.querySelector('.player');
+const player = document.querySelector('.info');
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 const themeToggle = document.querySelector('.theme-toggle');
 const winningConditions = [
