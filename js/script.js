@@ -103,6 +103,10 @@ squares.forEach(square => {
 	square.addEventListener('click', () => {
 		square.querySelector('div').classList.add(currentPlayer);
 		square.setAttribute('disabled', true);
+		square.setAttribute('aria-pressed', true);
+		square.querySelector('span').textContent = `${
+			square.querySelector('span').textContent
+		} zostało już wybrane przez ${currentPlayer.toUpperCase()}`;
 		const area = parseInt(square.getAttribute('data-area'));
 		gameBoard[area] = currentPlayer;
 		checkIsWinner();

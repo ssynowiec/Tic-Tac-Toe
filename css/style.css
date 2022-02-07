@@ -1,3 +1,7 @@
+:root {
+  --hover-color: #858585c0;
+}
+
 [data-mode='dark'] {
   --color: #fff;
   --bgc: #1c1b22;
@@ -143,8 +147,13 @@ body {
   transition: background-color 0.2s;
 }
 
+.board .square .visually-hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
 .board .square:hover {
-  background-color: #858585c0;
+  background-color: var(--hover-color);
 }
 
 .board .square:disabled {

@@ -1,4 +1,6 @@
-@import './colors';
+:root {
+	--hover-color: #858585c0;
+}
 
 [data-mode='dark'] {
 	--color: #fff;
@@ -116,8 +118,13 @@ body {
 		cursor: pointer;
 		transition: background-color 0.2s;
 
+		.visually-hidden {
+			position: absolute;
+			visibility: hidden;
+		}
+
 		&:hover {
-			background-color: $hover;
+			background-color: var(--hover-color);
 		}
 
 		&:disabled {

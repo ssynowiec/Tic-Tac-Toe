@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="pl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Game Tic Toe" />
-		<meta name="keywords" content="game, tic toe, multiplayer, x, y" />
-		<meta name="author" content="ssynowiec.pl" />
-		<meta name="color-scheme" content="dark light" />
-		<title>Tic Tac Toe</title>
-		<link
-			rel="shortcut icon"
-			href="./img/icons/xo.ico"
-			type="image/x-icon"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="./css/style.css" />
-	</head>
-	<body data-mode="light">
-		<header class="header">
-			<h1>Tic Tac Toe</h1>
-			<button class="theme-toggle" title="Toogle site theme">
-				<img src="./img/icons/sun.png" alt="" class="sun" />
-				<img src="./img/icons/moon.png" alt="" class="moon" />
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Game Tic Toe" />
+	<meta name="keywords" content="game, tic toe, multiplayer, x, y" />
+	<meta name="author" content="ssynowiec.pl" />
+	<meta name="color-scheme" content="dark light" />
+	<title>Tic Tac Toe</title>
+	<link rel="shortcut icon" href="./img/icons/xo.ico" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body data-mode="light">
+	<header class="header">
+		<h1>Tic Tac Toe</h1>
+		<button class="theme-toggle" title="Toogle site theme">
+			<img src="./img/icons/sun.png" alt="" class="sun" />
+			<img src="./img/icons/moon.png" alt="" class="moon" />
+		</button>
+	</header>
+	<main class="main">
+		<h2 class="info"></h2>
+		<section class="board">
+			<button class="square top left" data-area="0">
+				<span class="visually-hidden">Pole w lewym górnym rogu</span>
+				<div></div>
 			</button>
-		</header>
-		<main class="main">
-			<h2 class="info"></h2>
-			<section class="board">
-				<button class="square top left" data-area="0">
-					<div></div>
-				</button>
-				<button class="square top" data-area="1">
-					<div></div>
-				</button>
-				<button class="square top right" data-area="2">
-					<div></div>
-				</button>
-				<button class="square left" data-area="3">
-					<div></div>
-				</button>
-				<button class="square" data-area="4">
-					<div></div>
-				</button>
-				<button class="square right" data-area="5">
-					<div></div>
-				</button>
-				<button class="square bottom left" data-area="6">
-					<div></div>
-				</button>
-				<button class="square bottom" data-area="7">
-					<div></div>
-				</button>
-				<button class="square bottom right" data-area="8">
-					<div></div>
-				</button>
-			</section>
-			<button class="restart">Restart</button>
-		</main>
-		<footer class="footer">
-			<p class="copy">
-				&copy; 2022
-				<a href="https://github.com/ssynowiec"
-					>github.com/ssynowiec.pl</a
-				>
-			</p>
-		</footer>
-		<script src="./js/script.js"></script>
-	</body>
+			<button class="square top" data-area="1">
+				<span class="visually-hidden">Pole środkowe na górze</span>
+				<div></div>
+			</button>
+			<button class="square top right" data-area="2">
+				<span class="visually-hidden">Pole w prawym górnym rogu</span>
+				<div></div>
+			</button>
+			<button class="square left" data-area="3">
+				<span class="visually-hidden">Środkowe pole po lewej</span>
+				<div></div>
+			</button>
+			<button class="square" data-area="4">
+				<span class="visually-hidden">Pole środkowe</span>
+				<div></div>
+			</button>
+			<button class="square right" data-area="5">
+				<span class="visually-hidden">Środkowe pole po prawej</span>
+				<div></div>
+			</button>
+			<button class="square bottom left" data-area="6">
+				<span class="visually-hidden">Pole w lewym dolnym rogu</span>
+				<div></div>
+			</button>
+			<button class="square bottom" data-area="7">
+				<span class="visually-hidden">Pole środkowe na dole</span>
+				<div></div>
+			</button>
+			<button class="square bottom right" data-area="8">
+				<span class="visually-hidden">Pole w prawym dolnym rogu</span>
+				<div></div>
+			</button>
+		</section>
+		<button class="restart">Restart</button>
+	</main>
+	<footer class="footer">
+		<p class="copy">
+			&copy; 2022
+			<a href="https://github.com/ssynowiec">github.com/ssynowiec.pl</a>
+		</p>
+	</footer>
+	<script src="./js/script.js"></script>
+</body>
+
 </html>
