@@ -3,6 +3,7 @@ const restartBtn = document.querySelector('.restart');
 const player = document.querySelector('.info');
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 const themeToggle = document.querySelector('.theme-toggle');
+const langToggle = document.querySelector('.lang-toggle');
 const winningConditions = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -15,12 +16,25 @@ const winningConditions = [
 ];
 let currentPlayer = 'o';
 let isWinner = false;
+const accessibilitySpans = [
+	'Pole w lewym górnym rogu',
+	'Pole środkowe na górze',
+	'Pole w prawym górnym rogu',
+	'Środkowe pole po lewej',
+	'Pole środkowe',
+	'Środkowe pole po prawej',
+	'Pole w lewym dolnym rogu',
+	'Pole środkowe na dole',
+	'Pole w prawym dolnym rogu',
+];
 
 const restartGame = () => {
+	i = 0;
 	squares.forEach(square => {
 		square.classList.remove('blocked');
 		square.removeAttribute('disabled');
-		square.innerHTML = '<div></div>';
+		square.innerHTML = `<span class="visually-hidden">${accessibilitySpans[i]}</span><div></div>`;
+		i++;
 	});
 	currentPlayer = 'o';
 	showCurrentPlayer();
@@ -121,3 +135,4 @@ squares.forEach(square => {
 restartBtn.addEventListener('click', restartGame);
 document.addEventListener('DOMContentLoaded', contentLoad);
 themeToggle.addEventListener('click', changeTheme);
+langToggle.addEventListener('click', changeLanguage);
